@@ -11,3 +11,13 @@ class InvalidApiKeyError extends WeatherSDKError {
         this.name = 'InvalidApiKeyError'
     }
 }
+
+class RequestFAiledError extends WeatherSDKError {
+
+    constructor(status) {
+        super(`API request failed with status ${status}`)
+
+        this.name = "RequestFailedError";
+        this.status = status
+    }
+}
