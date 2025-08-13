@@ -31,4 +31,31 @@ const {
         }
       }
 
+
+
+      async _makeRequest(endpoint, params = {}) {
+
+        try {
+
+            this._log(`Making request to ${endpoint}`)
+
+            const res = await axios({
+                method: 'get' ,
+                url: `${this.config.baseUrl} ${endpoint}`,
+
+                params:{
+                    key: this.apikey,
+                    lang : this.config.language,
+                    ...params
+                },
+                timeout: this.config.timeout
+
+            });
+
+            return res.data;
+            
+        } catch (error) {
+            
+        }
+      }
  }
