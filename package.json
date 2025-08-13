@@ -1,0 +1,11 @@
+{
+    "name": "weather-sdk",
+    "version": "1.0.0",
+    "description": "A simple level SDK project",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "jest",
+        "start": "node examples/examples.js"
+    },
+
+}
