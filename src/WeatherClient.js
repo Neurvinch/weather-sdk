@@ -25,6 +25,10 @@ const {
 
         this._log("SDK initialized")
     }
+      _log(message) {
+        if(this.config.debug) {
+            console.log(`[WeatherSDK]  ${message}`)
+        }
+      }
 
-    
  }
