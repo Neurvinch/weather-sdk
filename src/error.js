@@ -21,3 +21,10 @@ class RequestFAiledError extends WeatherSDKError {
         this.status = status
     }
 }
+
+
+module.exports = {
+    WeatherSDKError,
+    InvalidApiKeyError,
+    RequestFAiledError
+}
