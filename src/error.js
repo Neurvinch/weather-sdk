@@ -4,3 +4,10 @@ class WeatherSDKError extends Error {
         this.name = 'WeatherSDKError';
     }
 }
+
+class InvalidApiKeyError extends WeatherSDKError {
+    constructor() {
+        super("Invalid API key provided")
+        this.name = 'InvalidApiKeyError'
+    }
+}
