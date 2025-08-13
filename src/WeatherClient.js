@@ -67,4 +67,22 @@ const {
             
         }
       }
+
+
+      async getCureentWeather (location) {
+
+        return this._makeRequest('/current.json', {q: location})
+      }
+
+
+      async getForecast(location, days=3) {
+        return this._makeRequest('/forecast.json',
+            {
+                q: location,
+                days: days
+            }
+        )
+      }
  }
+
+ module.exports = WeatherClient;
