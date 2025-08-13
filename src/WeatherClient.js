@@ -55,6 +55,15 @@ const {
             return res.data;
             
         } catch (error) {
+
+            if(error.response) {
+                throw new RequestFAiledError(error.response.status);
+            } else if (error.request) {
+                throw new WeatherSDKError("No response recieved from server")
+
+            } else {
+                throw new WeatherSDKError(error.message)
+            }
             
         }
       }
