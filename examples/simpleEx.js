@@ -17,7 +17,20 @@ async function main () {
          console.log("Forecast:", forecast.forecast.forecastday.length, 'days')
         
     } catch (error) {
-        
-        
+
+        if (error.name === "InvalidApiKeyError" ) {
+            console.error("Invalid API Key. Please check your API key and try again.");
+
+
+        }
+           else if (error.name === " RequestFailedError") {
+            console.error ('Api Request failed with status:', error.status)
+           } 
+           
+        else {
+            console.error("An unexpected error occurred:", error.message);
     }
 }
+}
+
+main()
