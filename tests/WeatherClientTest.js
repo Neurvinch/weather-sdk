@@ -36,7 +36,12 @@ describe('WeatherClient', () => {
 
 
     test("shpuld throw RequestFailedError on API error", async  () => {
-        
+        const error = {Response: {status: 401}}
+
+        axios.mockRejectedValue(error)
+
+
+        await expect(client.getCurrentWeather("Germany")).rejects.toThrowError("API request failed with status 401");
     })
 
 });
