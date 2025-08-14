@@ -16,6 +16,14 @@ describe('WeatherClient', () => {
         axios.mockClear()
     })
 
+    test('should throw error when no API key provided' , () => {
+        expect( () => new WeatherClient()).toThrowError('API key is required');
+    })
+
+    test('getCurrentWeather should make API request', async  () => {
+        
+    })
+
 });
 
 
