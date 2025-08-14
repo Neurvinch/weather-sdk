@@ -21,6 +21,21 @@ describe('WeatherClient', () => {
     })
 
     test('getCurrentWeather should make API request', async  () => {
+        const mockResponse = {
+            date: { current : {temp_c : 15}}
+        };
+
+        const result =  await client.getCurrentWeather('Germany');
+        expect(result.current.temp_c).toBe(15);
+
+        expect(axios).toHaveBeenCalledWith(expect.objectContaining({
+            method: 'get',  
+            url: expect.stringContaining('/current.json')
+        }))
+    })
+
+
+    test("shpuld throw RequestFailedError on API error", async  () => {
         
     })
 
