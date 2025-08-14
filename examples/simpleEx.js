@@ -11,8 +11,13 @@ async function main () {
          const current = await weather.getCureentWeather('Germany');
 
          console.log('Current Weather: ', current.current.temp_c, "°C");
+
+         const forecast = await weather.getForecast('Chennai', 4);
+
+         console.log("Forecast:", forecast.forecast.forecastday.length, 'days')
         
     } catch (error) {
+        
         
     }
 }
